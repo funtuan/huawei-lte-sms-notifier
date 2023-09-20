@@ -6,9 +6,11 @@ const connection = new Connection(process.env.CONNECT_URL);
 
 let lastDate
 
+const cronTime = process.env.CRON_TIME || '*/10 * * * * *'
+
 const job = new CronJob(
   // every 10 seconds
-  '*/10 * * * * *',
+  cronTime,
   async function() {
     if (lastDate) {
       const sms = new Sms(connection)
