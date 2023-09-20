@@ -1,0 +1,16 @@
+{
+  "name": "huawei-lte-sms-listener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "huawei-lte-api": "^0.1.1"
+  }
+}
