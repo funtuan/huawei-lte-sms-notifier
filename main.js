@@ -47,15 +47,19 @@ async function sendLineNotify(message, token) {
 }
 
 async function main() {
+  console.log('connecting...')
   await connection.ready
+  console.log('connected')
 
   const sms = new Sms(connection)
 
   const { Messages: { Message: msgs } } = await sms.getSmsList()
 
   lastDate = new Date(msgs[0].Date)
+  console.log('lastDate', lastDate)
 
   job.start()
+  console.log('job started')
 }
 
 main()
