@@ -14,8 +14,6 @@ const job = new CronJob(
       const sms = new Sms(connection)
       const { Messages: { Message: msgs } } = await sms.getSmsList()
 
-      console.log('lastDate', lastDate)
-
       const newMsgs = msgs.filter(msg => new Date(msg.Date) > lastDate)
 
       if (newMsgs.length > 0) {
